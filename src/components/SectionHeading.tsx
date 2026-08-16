@@ -1,0 +1,4 @@
+interface SectionHeadingProps { eyebrow?: string; title: string; description?: string; light?: boolean; align?: 'left' | 'center'; }
+export default function SectionHeading({ eyebrow, title, description, light = false, align = 'left' }: SectionHeadingProps) {
+  return <div className={`${align === 'center' ? 'mx-auto text-center' : ''} max-w-2xl`}><div className={`mb-3 flex items-center gap-3 ${align === 'center' ? 'justify-center' : ''}`}><span className="h-0.5 w-8 bg-primary-600" /><span className={`font-heading text-xs font-bold uppercase tracking-[0.18em] ${light ? 'text-primary-300' : 'text-primary-600'}`}>{eyebrow || 'Handyman & Beyond'}</span></div><h2 className={`font-heading text-3xl font-bold leading-tight sm:text-4xl ${light ? 'text-white' : 'text-secondary-900'}`}>{title}</h2>{description && <p className={`mt-4 text-base leading-7 ${light ? 'text-neutral-300' : 'text-secondary-600'}`}>{description}</p>}</div>;
+}
